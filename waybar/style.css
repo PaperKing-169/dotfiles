@@ -1,19 +1,22 @@
+@define-color main-bg #030615;
+@define-color border #803fbf;
+@define-color font #dddddd;
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "DaddyTimeMono Nerd Font",FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Iosevka Nerd Font Propo",FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
-
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    background-color: @main-bg;
+    border-bottom: 2px solid @border;
+    color: @font;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    opacity: 0.5;
 }
 
 /*
@@ -56,7 +59,7 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #fff;
 }
 
 #workspaces button:hover {
@@ -64,12 +67,22 @@ button:hover {
 }
 
 #workspaces button.focused, #workspaces button.active {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    padding-top: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent 20%,
+        @border 100%
+    );
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+}
+
+#workspaces {
+    border: 2px solid @border;
+    border-radius: 6px 6px 0px 0px;
+    border-bottom: 2px solid @main-bg;
 }
 
 #mode {
@@ -146,22 +159,22 @@ button:hover {
 }
 
 #power-profiles-daemon {
-    padding-right: 15px;
+    padding-right: 10px;
 }
 
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: transparent;
+    color: #FA222A;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
+    background-color: transparent;
+    color: #2584F8;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: transparent;
+    color: #7BB274;
 }
 
 label:focus {
@@ -194,8 +207,9 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    background: transparent;
+    color: white;
+    border: 1px solid 
 }
 
 #pulseaudio.muted {
@@ -217,6 +231,7 @@ label:focus {
     color: #2a5c45;
     min-width: 100px;
 }
+
 
 #custom-media.custom-spotify {
     background-color: #66cc99;
@@ -248,12 +263,18 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    color: #808080;
+    padding-left: 5px;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    color: #C07734;
+}
+
+#idle_power {
+    border: 1px solid white;
+    border-radius: 15px;
+    margin-bottom: 4px
 }
 
 #mpd {
