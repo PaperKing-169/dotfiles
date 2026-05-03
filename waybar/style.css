@@ -21,10 +21,10 @@ window#waybar.hidden {
 
 /*
 window#waybar.empty {
-    background-color: transparent;
+background-color: transparent;
 }
 window#waybar.solo {
-    background-color: #FFFFFF;
+background-color: #FFFFFF;
 }
 */
 
@@ -52,9 +52,7 @@ button:hover {
 }
 
 /* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
+
 
 #workspaces button {
     padding: 0 5px;
@@ -72,7 +70,7 @@ button:hover {
         to bottom,
         transparent 20%,
         @border 100%
-    );
+        );
 }
 
 #workspaces button.urgent {
@@ -116,6 +114,10 @@ button:hover {
     margin: 0 4px;
 }
 
+#window {
+    color: #666;
+}
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
@@ -127,12 +129,12 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background: transparent;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    background: transparent;
+    color: @font;
 }
 
 #battery.charging, #battery.plugged {
@@ -141,10 +143,10 @@ button:hover {
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+to {
+    background-color: #ffffff;
+    color: #000000;
+}
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
@@ -195,27 +197,43 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background: transparent;
 }
 
 #network {
-    background-color: #2980b9;
+    background: transparent;
 }
 
 #network.disconnected {
     background-color: #f53c3c;
 }
 
-#pulseaudio {
+#pulseaudio,
+#idle_power,
+#network,
+#backlight,
+#battery
+{
     background: transparent;
-    color: white;
-    border: 1px solid 
+    color: #999999;
+    border: 1px solid @border;
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 5px;
+    border-top: None;
+    margin-top: 0px;
+    padding-bottom: 4px;
 }
 
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+#pulseaudio:hover,
+#network:hover,
+#backlight:hover,
+#battery:hover
+{
+    color: #eee;
+    padding-bottom: 2px;
 }
+
+
 
 #wireplumber {
     background-color: #fff0f5;
@@ -271,12 +289,6 @@ label:focus {
     color: #C07734;
 }
 
-#idle_power {
-    border: 1px solid white;
-    border-radius: 15px;
-    margin-bottom: 4px
-}
-
 #mpd {
     background-color: #66cc99;
     color: #2a5c45;
@@ -323,7 +335,7 @@ label:focus {
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 #privacy {
