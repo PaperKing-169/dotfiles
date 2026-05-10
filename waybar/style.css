@@ -4,7 +4,7 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Iosevka Nerd Font Propo",FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "VictorMono Nerd Font propo",FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
 window#waybar {
@@ -205,13 +205,15 @@ label:focus {
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: #BB3f3f;
+    color: #eee;
 }
 
 #pulseaudio,
 #idle_power,
 #network,
 #backlight,
+#tray,
 #battery
 {
     background: transparent;
@@ -223,7 +225,7 @@ label:focus {
     margin-top: 0px;
     padding-bottom: 4px;
 }
-
+#tray:hover,
 #pulseaudio:hover,
 #network:hover,
 #backlight:hover,
@@ -268,7 +270,12 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    /* background: transparent;
+    padding-bottom: 4px;
+    border: 1px solid @border;
+    margin-bottom: 5px;
+    border-top: None;
+    */
 }
 
 #tray > .passive {
